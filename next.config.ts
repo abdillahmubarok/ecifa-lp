@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'be.ecifa.id',
+        hostname: 'ecifa.id',
         port: '',
         pathname: '/**',
       }

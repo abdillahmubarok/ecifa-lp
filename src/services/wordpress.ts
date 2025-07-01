@@ -1,6 +1,6 @@
 import type { WPPublication, WPCategory } from '@/types/wordpress';
 
-const API_URL = 'https://be.ecifa.id/wp-json/wp/v2';
+const API_URL = 'https://ecifa.id/wp-json/wp/v2';
 
 async function fetchAPI(endpoint: string) {
   const headers = { 'Content-Type': 'application/json' };
@@ -60,7 +60,8 @@ export async function getPublicationBySlug(slug: string): Promise<WPPublication 
 
 export async function getPublicationCategories(): Promise<WPCategory[]> {
    try {
-    // Fetches standard post categories. Adjust if a custom taxonomy is used.
+    // Fetches categories. WordPress REST API doesn't have a built-in way to get categories for a specific post type.
+    // This fetches all non-empty categories. Ensure only relevant categories are used with the 'publikasi' CPT in WP Admin.
     const data = await fetchAPI(`/categories?_hide_empty=true&orderby=name&order=asc`);
     return data || [];
   } catch (error) {
