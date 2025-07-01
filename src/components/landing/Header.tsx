@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, BookOpenCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -62,15 +62,14 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[80vw]">
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center border-b pb-6">
-                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                  <SheetHeader className="text-left border-b pb-6">
+                    <SheetTitle>
+                      <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                         <BookOpenCheck className="h-6 w-6 text-primary" />
                         <span className="font-bold text-lg text-primary">Ecifa.id</span>
                       </Link>
-                      <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                        <X className="h-6 w-6" />
-                      </Button>
-                  </div>
+                    </SheetTitle>
+                  </SheetHeader>
                   <nav className="flex flex-col gap-4 mt-8">
                     {navLinks.map((link) => (
                       <Link key={link.href} href={link.href} 
