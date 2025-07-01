@@ -17,15 +17,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
+      <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <BookOpenCheck className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg text-primary">Ecifa.id</span>
+          <BookOpenCheck className="h-7 w-7 text-primary" />
+          <span className="font-bold text-xl text-primary">Ecifa.id</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-base font-medium">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-foreground/80 transition-colors hover:text-foreground">
+            <Link key={link.href} href={link.href} className="text-foreground/70 transition-colors hover:text-foreground">
               {link.label}
             </Link>
           ))}
@@ -46,7 +46,7 @@ export default function Header() {
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground" onClick={() => setIsOpen(false)}>
+                    <Link key={link.href} href={link.href} className="text-xl font-medium text-foreground/80 transition-colors hover:text-foreground" onClick={() => setIsOpen(false)}>
                       {link.label}
                     </Link>
                   ))}

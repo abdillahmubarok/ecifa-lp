@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const publications = [
   {
@@ -29,9 +30,9 @@ const publications = [
 
 export default function Publications() {
   return (
-    <section id="publications" className="py-16 md:py-24">
+    <section id="publications" className="py-20 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Riset & Publikasi Terbaru</h2>
           <p className="text-lg text-muted-foreground">
             Jelajahi temuan terbaru kami yang memberikan wawasan mendalam tentang berbagai isu penting dalam dunia pendidikan.
@@ -39,28 +40,32 @@ export default function Publications() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {publications.map((pub, index) => (
-            <Card key={index} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
-              <Image
-                src={pub.imageUrl}
-                alt={pub.title}
-                width={600}
-                height={400}
-                className="object-cover w-full h-48"
-                data-ai-hint={pub.aiHint}
-              />
-              <CardHeader className="flex-grow">
-                <CardTitle className="text-lg text-primary leading-snug">{pub.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">{pub.summary}</p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="link" className="p-0 text-accent hover:text-accent/80">
-                  <Link href={pub.link}>
-                    Baca Selengkapnya →
-                  </Link>
-                </Button>
-              </CardFooter>
+            <Card key={index} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-card rounded-2xl group">
+              <div className="relative overflow-hidden">
+                <Image
+                  src={pub.imageUrl}
+                  alt={pub.title}
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-56 transition-transform duration-300 group-hover:scale-105"
+                  data-ai-hint={pub.aiHint}
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <CardHeader className="p-0 flex-grow">
+                  <CardTitle className="text-xl text-primary font-bold leading-snug">{pub.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 mt-3 flex-grow">
+                  <p className="text-muted-foreground text-base">{pub.summary}</p>
+                </CardContent>
+                <CardFooter className="p-0 mt-6">
+                  <Button asChild variant="link" className="p-0 text-accent font-semibold hover:text-accent/80">
+                    <Link href={pub.link}>
+                      Baca Selengkapnya <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </div>
             </Card>
           ))}
         </div>
