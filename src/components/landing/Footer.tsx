@@ -1,46 +1,67 @@
 import Link from 'next/link';
-import { BookOpenCheck, Linkedin, Twitter } from 'lucide-react';
+import { BookOpenCheck, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-secondary/50 border-t">
-      <div className="container mx-auto px-4 py-16">
+    <footer id="contact" className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-4">
+          
+          <div className="md:col-span-4 mb-8 md:mb-0">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <BookOpenCheck className="h-8 w-8 text-primary" />
-              <span className="font-bold text-2xl text-primary">Ecifa.id</span>
+              <BookOpenCheck className="h-8 w-8" />
+              <span className="font-bold text-2xl">Ecifa.id</span>
             </Link>
-            <p className="text-muted-foreground max-w-sm">
+            <p className="text-primary-foreground/70 max-w-sm">
               Riset dan pengembangan independen untuk transformasi pendidikan Indonesia.
             </p>
-            <div className="flex space-x-4 mt-6">
-              <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"><Linkedin /></Link>
-              <Link href="#" aria-label="Twitter" className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"><Twitter /></Link>
+            <div className="flex space-x-2 mt-6">
+              <Button asChild size="icon" variant="ghost" className="hover:bg-primary-foreground/10">
+                <Link href="#" aria-label="LinkedIn"><Linkedin /></Link>
+              </Button>
+              <Button asChild size="icon" variant="ghost" className="hover:bg-primary-foreground/10">
+                <Link href="#" aria-label="Twitter"><Twitter /></Link>
+              </Button>
             </div>
           </div>
+
           <div className="md:col-span-2">
-            <h4 className="font-bold text-primary mb-4 text-lg">Navigasi</h4>
+            <h4 className="font-bold mb-4 text-lg">Navigasi</h4>
             <ul className="space-y-3">
-              <li><Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">Tentang Kami</Link></li>
-              <li><Link href="#focus" className="text-muted-foreground hover:text-primary transition-colors">Fokus Riset</Link></li>
-              <li><Link href="#publications" className="text-muted-foreground hover:text-primary transition-colors">Publikasi</Link></li>
+              <li><Link href="/tentang" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Tentang Kami</Link></li>
+              <li><Link href="/riset" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Fokus Riset</Link></li>
+              <li><Link href="/publikasi" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Publikasi</Link></li>
+              <li><Link href="/kontak" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Kontak</Link></li>
             </ul>
           </div>
+          
           <div className="md:col-span-3">
-            <h4 className="font-bold text-primary mb-4 text-lg">Hubungi Kami</h4>
+            <h4 className="font-bold mb-4 text-lg">Hubungi Kami</h4>
             <ul className="space-y-3">
-              <li><a href="mailto:info@ecifa.id" className="text-muted-foreground hover:text-primary transition-colors">info@ecifa.id</a></li>
-              <li><a href="mailto:kolaborasi@ecifa.id" className="text-muted-foreground hover:text-primary transition-colors">kolaborasi@ecifa.id</a></li>
-              <li className="text-muted-foreground">Gedung Inovasi Lt. 5, Jakarta</li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-5 w-5 text-accent"/>
+                <a href="mailto:info@ecifa.id" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">info@ecifa.id</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-5 w-5 text-accent"/>
+                <a href="mailto:kolaborasi@ecifa.id" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">kolaborasi@ecifa.id</a>
+              </li>
             </ul>
           </div>
+
+           <div className="md:col-span-3">
+            <h4 className="font-bold mb-4 text-lg">Mari Berkolaborasi</h4>
+            <p className="text-primary-foreground/70 mb-4">Siap memajukan pendidikan? Kami membuka pintu untuk kerjasama.</p>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
+              <Link href="/kontak">Hubungi Kami</Link>
+            </Button>
+          </div>
+
         </div>
-      </div>
-      <div className="bg-background border-t">
-        <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+        <div className="mt-16 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
           &copy; {currentYear} Ecifa.id. All Rights Reserved.
         </div>
       </div>
