@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { format } from 'date-fns';
 
@@ -15,6 +15,7 @@ export default function PublicationCard({ publication }: PublicationCardProps) {
   const imageUrl = publication._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://placehold.co/600x400.png';
   const category = publication._embedded?.['wp:term']?.[0]?.[0];
   const publicationDate = format(new Date(publication.date), 'dd MMM yyyy');
+  const penulis = publication.acf?.penulis;
 
   return (
     <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white rounded-2xl group h-full">
@@ -39,7 +40,7 @@ export default function PublicationCard({ publication }: PublicationCardProps) {
         <CardHeader className="p-0 flex-grow">
           <Link href={`/publikasi/${publication.slug}`}>
             <CardTitle 
-              className="text-xl text-primary font-bold leading-snug hover:text-accent transition-colors"
+              className="text-xl text-primary font-bold leading-snug hover:text-accent transition-colors line-clamp-2"
               dangerouslySetInnerHTML={{ __html: publication.title.rendered }}
             />
           </Link>
@@ -50,12 +51,20 @@ export default function PublicationCard({ publication }: PublicationCardProps) {
             dangerouslySetInnerHTML={{ __html: publication.excerpt.rendered }}
           />
         </CardContent>
-        <CardFooter className="p-0 mt-6 flex justify-between items-center">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                <span>{publicationDate}</span>
+        <CardFooter className="p-0 mt-6 flex justify-between items-end">
+            <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>{publicationDate}</span>
+                </div>
+                {penulis && (
+                    <div className="flex items-center gap-2 truncate">
+                        <User className="h-4 w-4" />
+                        <span className="truncate">{penulis}</span>
+                    </div>
+                )}
             </div>
-            <Button asChild variant="link" className="p-0 text-accent font-semibold hover:text-accent/80">
+            <Button asChild variant="link" className="p-0 text-accent font-semibold hover:text-accent/80 self-end">
               <Link href={`/publikasi/${publication.slug}`}>
                 Baca <ArrowRight className="ml-1 h-4 w-4" />
               </Link>

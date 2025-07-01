@@ -37,6 +37,16 @@ export interface WPPublication {
   featured_media: number;
   categories: number[];
   tags: any[];
+  acf?: {
+    penulis?: string;
+    tahun_publikasi?: number;
+    doi?: string;
+    download_file?: {
+      url: string;
+      title: string;
+      filename: string;
+    } | false;
+  };
   _embedded: {
     'wp:featuredmedia'?: WPMedia[];
     'wp:term'?: WPCategory[][];
