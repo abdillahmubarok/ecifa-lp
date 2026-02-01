@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ContactForm from '@/components/landing/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Kontak & Kolaborasi | Ecifa.id',
@@ -31,25 +32,8 @@ export default function KontakPage() {
               <p className="text-lg text-muted-foreground mb-8">
                 Apakah Anda dari institusi pemerintah, lembaga pendidikan, perusahaan, atau seorang peneliti, kami siap mendengar ide dan gagasan Anda untuk memajukan pendidikan Indonesia.
               </p>
-              <div className="space-y-6">
-                <Card className="p-6 flex items-center gap-6 bg-white shadow-md">
-                  <div className="p-3 bg-accent/10 rounded-lg">
-                    <Mail className="h-8 w-8 text-accent"/>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-primary">Email General</h3>
-                    <a href="mailto:info@ecifa.id" className="text-muted-foreground hover:text-primary">info@ecifa.id</a>
-                  </div>
-                </Card>
-                 <Card className="p-6 flex items-center gap-6 bg-white shadow-md">
-                  <div className="p-3 bg-accent/10 rounded-lg">
-                    <Mail className="h-8 w-8 text-accent"/>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-primary">Kolaborasi & Kemitraan</h3>
-                    <a href="mailto:kolaborasi@ecifa.id" className="text-muted-foreground hover:text-primary">kolaborasi@ecifa.id</a>
-                  </div>
-                </Card>
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-primary/5">
+                <ContactForm />
               </div>
             </div>
 
@@ -66,6 +50,23 @@ export default function KontakPage() {
                     <span>(021) 123-4567</span>
                  </div>
                </div>
+               <div className="space-y-4 mt-8">
+                <Card className="p-4 flex items-center gap-4 bg-muted/50 border-none shadow-none">
+                  <Mail className="h-5 w-5 text-accent flex-shrink-0"/>
+                  <div className="text-sm">
+                    <p className="font-semibold">Email General</p>
+                    <a href="mailto:info@ecifa.id" className="text-muted-foreground hover:text-primary">info@ecifa.id</a>
+                  </div>
+                </Card>
+                <Card className="p-4 flex items-center gap-4 bg-muted/50 border-none shadow-none">
+                  <Mail className="h-5 w-5 text-accent flex-shrink-0"/>
+                  <div className="text-sm">
+                    <p className="font-semibold">Kolaborasi & Kemitraan</p>
+                    <a href="mailto:kolaborasi@ecifa.id" className="text-muted-foreground hover:text-primary">kolaborasi@ecifa.id</a>
+                  </div>
+                </Card>
+               </div>
+
                <div className="mt-8">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.577189539347!2d106.8271520747471!3d-6.18732299380023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f42e2a48b59d%3A0x1d473420b9255604!2sNational%20Monument!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 

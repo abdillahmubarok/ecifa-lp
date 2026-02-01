@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { BookOpenCheck, Linkedin, Twitter, Mail } from 'lucide-react';
+import { BookOpenCheck, Linkedin, Twitter, Mail, Send } from 'lucide-react';
 import { Button } from '../ui/button';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -53,11 +54,9 @@ export default function Footer() {
           </div>
 
            <div className="md:col-span-3">
-            <h4 className="font-bold mb-4 text-lg">Mari Berkolaborasi</h4>
-            <p className="text-primary-foreground/70 mb-4">Siap memajukan pendidikan? Kami membuka pintu untuk kerjasama.</p>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-              <Link href="/kontak">Hubungi Kami</Link>
-            </Button>
+            <h4 className="font-bold mb-4 text-lg">Newsletter</h4>
+            <p className="text-primary-foreground/70 mb-4 text-sm">Dapatkan update riset terbaru langsung di email Anda.</p>
+            <NewsletterForm />
           </div>
 
         </div>

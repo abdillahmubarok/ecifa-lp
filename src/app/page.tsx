@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getPublications } from '@/services/wordpress';
 import PublicationCard from '@/components/cards/PublicationCard';
+import { Partners, Testimonials } from '@/components/landing/SocialProof';
 
 const focusAreas = [
   { icon: BookMarked, title: 'Kurikulum & Pedagogi' },
@@ -20,6 +21,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <Partners />
 
       {/* About Us Summary */}
       <section id="about-summary" className="py-20 md:py-28">
@@ -93,7 +95,7 @@ export default async function Home() {
       </section>
 
       {/* Publications Summary */}
-      <section id="publications-summary" className="py-20 md:py-28">
+      <section id="publications-summary" className="py-20 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Riset & Publikasi Terbaru</h2>
@@ -125,6 +127,26 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Siap Memajukan Pendidikan Indonesia?</h2>
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+            Mari berkolaborasi untuk menciptakan solusi pendidikan yang berbasis data dan berdampak nyata bagi generasi mendatang.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8">
+              <Link href="/kontak">Mulai Kolaborasi</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground/20 hover:bg-primary-foreground/10 font-bold px-8">
+              <Link href="/tentang">Pelajari Visi Kami</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Testimonials />
     </>
   );
 }
