@@ -7,11 +7,12 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const publication = await getPublicationBySlug(params.slug);
+  const { slug } = await params;
+  const publication = await getPublicationBySlug(slug);
   if (!publication) {
     return { title: 'Publikasi Tidak Ditemukan' };
   }
@@ -26,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PublicationDetailPage({ params }: Props) {
-  const publication = await getPublicationBySlug(params.slug);
+  const { slug } = await params;
+  const publication = await getPublicationBySlug(slug);
 
   if (!publication) {
     notFound();

@@ -8,11 +8,15 @@ export const metadata: Metadata = {
   description: 'Temuan dan wawasan terbaru dari riset kami untuk memajukan pendidikan.',
 };
 
-export default async function PublikasiPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
-  
+export default async function PublikasiPage({
+  searchParams
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const resolvedSearchParams = await searchParams;
   const categories = await getPublicationCategories() ?? [];
   
-  const currentCategorySlug = typeof searchParams.kategori === 'string' ? searchParams.kategori : undefined;
+  const currentCategorySlug = typeof resolvedSearchParams.kategori === 'string' ? resolvedSearchParams.kategori : undefined;
   
   const currentCategory = currentCategorySlug 
     ? categories.find(cat => cat.slug === currentCategorySlug)
