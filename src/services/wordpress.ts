@@ -3,7 +3,10 @@ import type { WPPublication, WPCategory } from '@/types/wordpress';
 const API_URL = 'https://ecifa.id/wp-json/wp/v2';
 
 async function fetchAPI(endpoint: string) {
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = {
+    'Content-Type': 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+  };
   
   try {
     const res = await fetch(`${API_URL}${endpoint}`, {
