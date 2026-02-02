@@ -28,7 +28,7 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 lg:h-[450px] w-full rounded-2xl overflow-hidden shadow-xl animate-fade-in-up">
-              <Image src="https://placehold.co/600x800.png" alt="Diskusi tim Ecifa.id" fill className="object-cover" data-ai-hint="academic discussion" />
+              <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071" alt="Diskusi tim Ecifa.id" fill className="object-cover" data-ai-hint="academic discussion" />
             </div>
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-3xl md:text-4xl font-bold text-primary">Lembaga Riset Independen untuk Pendidikan Indonesia</h2>

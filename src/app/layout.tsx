@@ -20,6 +20,28 @@ export const metadata: Metadata = {
     icon: 'https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp',
     apple: 'https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp',
   },
+  openGraph: {
+    title: 'Ecifa.id | Riset dan Inovasi Pendidikan Indonesia',
+    description: 'Mendorong Transformasi Pendidikan Indonesia Melalui Riset dan Inovasi.',
+    url: 'https://ecifa.id',
+    siteName: 'Ecifa.id',
+    images: [
+      {
+        url: 'https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/seo/open-graph-ecifa-id.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Ecifa.id - Riset dan Inovasi Pendidikan Indonesia',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ecifa.id | Riset dan Inovasi Pendidikan Indonesia',
+    description: 'Mendorong Transformasi Pendidikan Indonesia Melalui Riset dan Inovasi.',
+    images: ['https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/seo/open-graph-ecifa-id.webp'],
+  },
 };
 
 export default function RootLayout({
