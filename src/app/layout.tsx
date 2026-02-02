@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: 'Ecifa.id | Riset dan Inovasi Pendidikan Indonesia',
   description: 'Mendorong Transformasi Pendidikan Indonesia Melalui Riset dan Inovasi. Ecifa.id adalah lembaga riset dan pengembangan independen untuk sektor pendidikan.',
   keywords: 'riset pendidikan Indonesia, inovasi pendidikan, pengembangan kurikulum, teknologi pendidikan, kebijakan pendidikan Indonesia',
+  icons: {
+    icon: 'https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp',
+    apple: 'https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp',
+  },
 };
 
 export default function RootLayout({

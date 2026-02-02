@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/50 to-transparent z-10" />
       <Image
-        src="https://placehold.co/1920x1080.png"
+        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070"
         alt="Kolaborasi riset pendidikan modern"
         fill
         className="object-cover"
