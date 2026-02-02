@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, BookOpenCheck } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -34,7 +35,13 @@ export default function Header() {
     )}>
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <BookOpenCheck className="h-7 w-7 text-primary" />
+          <Image
+            src="https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp"
+            alt="Ecifa.id Logo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
           <span className="font-bold text-xl text-primary">Ecifa.id</span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">
@@ -65,7 +72,13 @@ export default function Header() {
                   <SheetHeader className="text-left border-b pb-6">
                     <SheetTitle>
                       <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                        <BookOpenCheck className="h-6 w-6 text-primary" />
+                        <Image
+                          src="https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp"
+                          alt="Ecifa.id Logo"
+                          width={28}
+                          height={28}
+                          className="rounded-full"
+                        />
                         <span className="font-bold text-lg text-primary">Ecifa.id</span>
                       </Link>
                     </SheetTitle>

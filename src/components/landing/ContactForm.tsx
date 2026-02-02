@@ -49,18 +49,37 @@ export default function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulasi pengiriman form
-    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    console.log(values);
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
 
-    toast({
-      title: "Pesan Terkirim!",
-      description: "Terima kasih telah menghubungi kami. Tim kami akan segera membalas pesan Anda.",
-    });
+      const result = await response.json();
 
-    form.reset();
+      if (!response.ok) {
+        throw new Error(result.error || 'Terjadi kesalahan saat mengirim pesan.');
+      }
+
+      toast({
+        title: "Pesan Terkirim!",
+        description: "Terima kasih telah menghubungi kami. Tim kami akan segera membalas pesan Anda.",
+      });
+
+      form.reset();
+    } catch (error: any) {
+      toast({
+        title: "Gagal Mengirim Pesan",
+        description: error.message || "Silakan coba lagi beberapa saat lagi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (

@@ -3,10 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
 
 const partners = [
-  { name: 'Kementerian Pendidikan', logo: 'https://placehold.co/200x80?text=Kemendikbud' },
-  { name: 'Universitas Indonesia', logo: 'https://placehold.co/200x80?text=UI' },
-  { name: 'Tech Foundation', logo: 'https://placehold.co/200x80?text=Tech+Found' },
-  { name: 'Global Ed Alliance', logo: 'https://placehold.co/200x80?text=Global+Ed' },
+  { name: 'Kementerian Pendidikan', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Kemendikbud.png' },
+  { name: 'Universitas Indonesia', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/id/0/0b/Logo_Universitas_Indonesia.png' },
+  { name: 'Telkom Indonesia', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Telkom_Indonesia_2013.svg/1200px-Telkom_Indonesia_2013.svg.png' },
+  { name: 'BRIN', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_BRIN.png/1200px-Logo_BRIN.png' },
 ];
 
 const testimonials = [

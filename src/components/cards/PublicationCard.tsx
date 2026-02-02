@@ -12,7 +12,7 @@ interface PublicationCardProps {
 }
 
 export default function PublicationCard({ publication }: PublicationCardProps) {
-  const imageUrl = publication._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://placehold.co/600x400.png';
+  const imageUrl = publication._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070';
   const category = publication._embedded?.['wp:term']?.[0]?.[0];
   const publicationDate = format(new Date(publication.date), 'dd MMM yyyy');
   const penulis = publication.acf?.penulis;

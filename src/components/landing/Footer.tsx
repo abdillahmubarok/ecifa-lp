@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { BookOpenCheck, Linkedin, Twitter, Mail, Send } from 'lucide-react';
+import { Linkedin, Twitter, Mail, Send } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '../ui/button';
 import NewsletterForm from './NewsletterForm';
 
@@ -13,7 +14,13 @@ export default function Footer() {
           
           <div className="md:col-span-4 mb-8 md:mb-0">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <BookOpenCheck className="h-8 w-8" />
+              <Image
+                src="https://storage-mubarokah.s3.ap-southeast-3.amazonaws.com/ecifa-id/logo/ecifa-logo.webp"
+                alt="Ecifa.id Logo"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
               <span className="font-bold text-2xl">Ecifa.id</span>
             </Link>
             <p className="text-primary-foreground/70 max-w-sm">
@@ -21,10 +28,10 @@ export default function Footer() {
             </p>
             <div className="flex space-x-2 mt-6">
               <Button asChild size="icon" variant="ghost" className="hover:bg-primary-foreground/10">
-                <Link href="#" aria-label="LinkedIn"><Linkedin /></Link>
+                <Link href="https://linkedin.com/company/ecifa-id" target="_blank" aria-label="LinkedIn"><Linkedin /></Link>
               </Button>
               <Button asChild size="icon" variant="ghost" className="hover:bg-primary-foreground/10">
-                <Link href="#" aria-label="Twitter"><Twitter /></Link>
+                <Link href="https://twitter.com/ecifa_id" target="_blank" aria-label="Twitter"><Twitter /></Link>
               </Button>
             </div>
           </div>
