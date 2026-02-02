@@ -3,10 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
 
 const partners = [
-  { name: 'Kementerian Pendidikan', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Kemendikbud.png' },
-  { name: 'Universitas Indonesia', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/id/0/0b/Logo_Universitas_Indonesia.png' },
-  { name: 'Telkom Indonesia', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Telkom_Indonesia_2013.svg/1200px-Telkom_Indonesia_2013.svg.png' },
-  { name: 'BRIN', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_BRIN.png/1200px-Logo_BRIN.png' },
+  { name: 'Kementerian Pendidikan', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/9/9c/Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg' },
+  { name: 'Universitas Indonesia', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/en/thumb/f/ff/University_of_Indonesia_logo_with_namestyle.svg/1280px-University_of_Indonesia_logo_with_namestyle.svg.png' },
+  { name: 'Telkom University', logo: 'https://images.weserv.nl/?url=kelaskaryawan.com/wp-content/uploads/2023/11/Logo-Telkom-University-png-3430x1174-1.png' },
+  { name: 'BRIN', logo: 'https://images.weserv.nl/?url=upload.wikimedia.org/wikipedia/commons/f/f7/Logo_of_National_Research_and_Innovation_Agency_of_Indonesia.svg' },
 ];
 
 const testimonials = [

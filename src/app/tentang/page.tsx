@@ -38,7 +38,7 @@ export default function TentangPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative h-96 lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl animate-fade-in-up">
-              <Image src="https://placehold.co/600x800.png" alt="Diskusi tim Ecifa.id" layout="fill" objectFit="cover" data-ai-hint="team planning" />
+              <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" alt="Diskusi tim Ecifa.id" layout="fill" objectFit="cover" data-ai-hint="team planning" />
             </div>
             <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                <div className="text-center lg:text-left max-w-3xl">

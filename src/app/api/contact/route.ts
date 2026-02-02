@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Ecifa Contact Form <onboarding@resend.dev>',
-      to: ['info@ecifa.id'], // Email tujuan
+      to: ['musringudin@gmail.com'], // Email tujuan
       subject: `Kontak Baru: ${subjek}`,
       replyTo: email,
       html: `
